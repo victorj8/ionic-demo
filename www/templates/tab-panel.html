@@ -1,0 +1,69 @@
+<ion-view title="fittracker">
+  <ion-nav-buttons side="left">
+    <button class="button button-clear ">
+      Edit
+    </button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <a class="button button-icon icon ion-ios-plus-empty" ng-click="showSheet()"></a>
+  </ion-nav-buttons>
+  <ion-content view-title="fittracker" has-header="true">
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" href="#/tab/dash">
+        <img ng-src="img/fitbit.png">
+        <h2>Charge HR</h2>
+        <p ng-if="syncing">Syncing...</p>
+        <p ng-if="!syncing">Connected</p>
+        <div class="icon">
+          <ion-spinner icon="ios-small" ng-if="syncing"></ion-spinner>
+          &nbsp;
+          <i class="ion-chevron-right icon-accessory"></i>
+        </div>
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-icon-right">
+        <img ng-src="img/steps.png">
+        <h2>{{steps}} steps</h2>
+        <progress id="progressbar" max="100" value="{{steps/100}}"> </progress>
+        <div class="icon">
+          <i class="ion-chevron-right icon-accessory"></i>
+        </div>
+        <ion-option-button class="button-assertive">
+          Delete
+        </ion-option-button>
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-icon-right">
+        <img ng-src="img/heart.png">
+        <h2>{{lpm}} lpm</h2>
+        <p>55 lpm in rest</p>
+        <div class="icon">
+          <i class="ion-chevron-right icon-accessory"></i>
+        </div>
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-icon-right">
+        <img ng-src="img/burn.png">
+        <h2>{{calories}} burned calories</h2>
+        <progress id="progressbar" max="100" value="{{calories/35}}"> </progress>
+        <div class="icon">
+          <i class="ion-chevron-right icon-accessory"></i>
+        </div>
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-icon-right">
+        <img ng-src="img/upstairs.png">
+        <h2>10 floors</h2>
+        <progress id="progressbar" max="100" value="100"> </progress>
+        <div class="icon">
+          <i class="ion-chevron-right icon-accessory"></i>
+        </div>
+      </ion-item>
+      <ion-item class="item-remove-animate item-avatar item-icon-right">
+        <img ng-src="img/energy.png">
+        <h2>44 minutes of activity</h2>
+        <progress id="progressbar" max="100" value="100"> </progress>
+        <div class="icon">
+          <i class="ion-chevron-right icon-accessory"></i>
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
+
